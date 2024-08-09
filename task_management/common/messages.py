@@ -1,0 +1,21 @@
+VERSION_NOT_SUPPORTED = 'API Version Not Supported'
+INTERNAL_SERVER_ERROR = 'Internal Server Error'
+VALIDATION_FAILED = 'Some Validations Have Failed'
+
+AUTH_FAILED = 'Authentication Failed'
+ACCESS_TOKEN_EXPIRED = 'Access Token Has Expired'
+REFRESH_TOKEN_EXPIRED = 'Refresh Token Has Expired'
+TOKEN_INVALID = 'Invalid Token'
+DECODE_ERROR = 'Header String Manipulated'
+ACCESS_TOKEN_REGENERATED = 'Access Token Generated'
+DATA_FOUND = 'Data Found'
+DATA_NOT_FOUND = 'Data Not Found'
+ACCESS_DENIED = 'Access Denied'
+ACCESS_GRANTED = 'Access Granted'
+
+METHOD_NOT_ALLOWED = 'Method Not Allowed'
+BAD_REQUEST = 'Bad Request'
+
+INVALID_SLUG = 'Invalid Slug'
+REQUEST_TIMEOUT = 'Request Timeout'
+EMAIL_VERIFICATION_FAILED = 'There was an error validating email. Please try again or use different email'

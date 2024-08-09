@@ -1,6 +1,6 @@
 from django.contrib import admin
 from simple_history.admin import SimpleHistoryAdmin
-from .models import Task, TaskComments, Reporter, Project
+from .models import Task, TaskComment, Project
 from ckeditor.widgets import CKEditorWidget
 from django import forms
 from django.utils.safestring import mark_safe
@@ -18,12 +18,12 @@ class TaskCommentsAdminForm(forms.ModelForm):
     comment = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
-        model = TaskComments
+        model = TaskComment
         fields = '__all__'
 
 
 class TaskCommentsInline(admin.TabularInline):
-    model = TaskComments
+    model = TaskComment
     form = TaskCommentsAdminForm
     extra = 1
 
@@ -53,17 +53,11 @@ class TaskAdmin(SimpleHistoryAdmin):
     inlines = [TaskCommentsInline]
 
 
-@admin.register(TaskComments)
+@admin.register(TaskComment)
 class TaskCommentsAdmin(admin.ModelAdmin):
     form = TaskCommentsAdminForm
     list_display = ('task', 'created_at')
     search_fields = ('task__title',)
-
-
-@admin.register(Reporter)
-class ReporterAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email')
-    search_fields = ('name',)
 
 
 @admin.register(Project)

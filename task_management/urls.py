@@ -22,5 +22,6 @@ from django.conf import settings
 urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
-                  path('api/', include('tasks.urls')),
+                  path('v1/auth/', include(('user_auth.urls', 'auth'), namespace="auth:v1")),
+                  path('v1/tasks/', include('tasks.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
